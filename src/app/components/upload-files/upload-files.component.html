@@ -1,0 +1,25 @@
+<div class="card my-5">
+    <div class="card-body">
+        <div *ngIf="currentFile" class="progress">
+            <div
+            class="progress-bar progress-bar-info progress-bar-striped"
+            role="progressbar"
+            attr.aria-valuenow="{{ progress }}"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [ngStyle]="{ width: progress + '%' }"
+            >
+            {{ progress }}%
+            </div>
+        </div>
+        <p></p>
+        <div class="fileinputcontainer">
+            <label class="btn btn-default arrangement">
+                <input class="inputfile-custom" type="file" (change)="selectFile($event)" />
+            </label>
+            <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+            <button *ngIf="currentFile" type="button" class="btn btn-primary float-right" (click)="viewOrders()">View Orders</button>
+        </div>
+        <div class="alert alert-light fl-left" role="alert">{{ message }}</div>
+    </div>
+</div>

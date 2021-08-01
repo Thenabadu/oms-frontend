@@ -1,0 +1,19 @@
+.inputfile-custom{
+    width: 100%;
+}
+
+.arrangement{
+    float: left;
+    width: 80%;
+    padding-left: 0;
+}
+
+.fl-left{
+    float: left;
+    padding-left: 0;
+}
+
+.fileinputcontainer{
+    width: 100%;
+    float: left;
+}
