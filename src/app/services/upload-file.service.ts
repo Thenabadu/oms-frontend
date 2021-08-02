@@ -25,11 +25,12 @@ upload(file: File): Observable<HttpEvent<any>> {
 }
 
 
-getOrderInfo(pageIndex: number = 0, pageSize: number = 10): Observable<OrderInfoWithCount> {
-  return this.http.get<OrderInfoWithCount>(`${this.baseUrl}/eventhistorystatus`, {
+getOrderInfo(pageIndex: number = 0, pageSize: number = 10, sorCol: string, sortDir: string = 'asc'): Observable<OrderInfoWithCount> {
+  return this.http.get<OrderInfoWithCount>(`${this.baseUrl}/order-info`, {
     params: new HttpParams()
-      .set('pageIndex', pageIndex.toString())
-      .set('pageSize', pageSize.toString())
+        .set('page', pageIndex.toString())
+        .set('size', pageSize.toString())
+        .set('sort', sorCol + ',' + sortDir)
   });
 }
 
